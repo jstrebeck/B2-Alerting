@@ -15,12 +15,18 @@ Execute the script and simply add your bucket name as a parameter
 Example:
 `./main.py my-bucket`
 
+## Docker
+Create your `.env` as referred to in [Main.py](#Main.py)
+
+Run the following to build your image
+`docker build -t b2-alerting .`
+
 ## AWS Lambda Function
 Build a zip file with the requirements and upload them to your function.
 ```
 pip install --target ./package -r requirements.txt && \
-zip -r Lambda.zip package && \
-zip -g Lambda.zip lambda_function.py
+cd package && zip -r ../lambda.zip . && cd .. && \
+zip -g lambda.zip lambda_function.py
 ```
 
 Add the following environment variables to your function.
