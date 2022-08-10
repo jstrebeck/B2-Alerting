@@ -15,8 +15,13 @@ Execute the script and simply add your bucket name as a parameter
 Example:
 `./main.py my-bucket`
 
-## Lambda Function
+## AWS Lambda Function
 Build a zip file with the requirements and upload them to your function.
+```
+pip install --target ./package -r requirements.txt && \
+zip -r Lambda.zip package && \
+zip -g Lambda.zip lambda_function.py
+```
 
 Add the following environment variables to your function.
 
