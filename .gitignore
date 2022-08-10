@@ -1,0 +1,10 @@
+#Pulled PIP packages
+/package
+
+#Sensitive environment variables
+.env
+
+#Lambda zip
+lambda.zip
+
+/venv
