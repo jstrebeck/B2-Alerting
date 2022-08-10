@@ -25,10 +25,10 @@ def main():
     dt_obj = datetime.fromtimestamp(timestamp)
 
     if datetime.now().date() - timedelta(hours = 24) < dt_obj.date():
-        print('The last backup was less than 24 hours ago')
+        print('❌The last backup was over 24 hours ago')
 
     else:
-        print('The last backup was over 24 hours ago')
+        print('✅The last backup was less than 24 hours ago')
 
 if __name__ == '__main__':
     main()

@@ -26,4 +26,5 @@ def lambda_handler(event, context):
         
 
     else:
+        print("✅The last backup was less than 24 hours ago")
         exit(1)
