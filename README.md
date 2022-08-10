@@ -53,3 +53,5 @@ Example:
 The output can then be sent to a notification service like SNS or SES
 
 - Add a destination and be sure to set the condition to "On success"
+    
+Note: You will only be alerted if your latest file is older than 24 hours.
