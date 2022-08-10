@@ -21,6 +21,11 @@ Create your `.env` as referred to in [Main.py](#Main.py)
 Run the following to build your image
 `docker build -t b2-alerting .`
 
+When running your container pass your bucket name as a parameter in quotes.
+
+Example:
+`docker run b2-alerting "my-bucket"`
+
 ## AWS Lambda Function
 Build a zip file with the requirements and upload them to your function.
 ```
@@ -40,11 +45,11 @@ Send the bucket name to your function with no key and in quotes.
 
 - You can create an EventBridge rule that runs every day at the same time.
     - If you use EventBridge set the input to constant and the value to your bucket name surrounded by quotes. 
+    
+Example:
+`"my-bucket"`
 
 #### Output
 The output can then be sent to a notification service like SNS or SES
 
 - Add a destination and be sure to set the condition to "On success"
-
-Example:
-`"my-bucket"`
